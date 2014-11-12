@@ -9,7 +9,6 @@ body{
 header{
     background-image:url(images/bg_header.png);
     background-repeat: no-repeat;
-    scroll 0 0 #E1B129;
     height: 195px;
     width: 100%;
 }
