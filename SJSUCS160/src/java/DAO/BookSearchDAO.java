@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Data Access Object for executing queries about book listings.
+ * Data Access Object for executing search queries about book listings.
  * 
  * @author Kevin Tan
  * @version 1.0
  * @since 11/15/2014
  */
-public class BookDAO extends DAOFactory 
+public class BookSearchDAO extends DAOFactory 
 {
     /**
      * Gets all of the rows from UserListings table in spartasavedb.
@@ -22,22 +22,22 @@ public class BookDAO extends DAOFactory
      * @return result all the matching records from UserListings table.
      * @throws SQLException 
      */
-    public ArrayList<UserBook> getUserListings
+    public ArrayList<Book> getUserListings
         (String attribute, String term, String order) throws SQLException
     {
         if (order.isEmpty()) order = "price"; // Order by price by default.
         
         // Execute statement to get results from database.
         preparedStatement = connection.prepareStatement("SELECT * FROM UserListings "
-                + "WHERE " + attribute + " = \"" + term + "\" "
+                + "WHERE " + attribute + " = '" + term + "' "
                 + "ORDER BY " + order);
         ResultSet result = preparedStatement.executeQuery();
         
         // Create UserBook objects and create an array of them from the results.
-        ArrayList<UserBook> userListings = new ArrayList<UserBook>();
+        ArrayList<Book> userListings = new ArrayList<Book>();
         while (result.next()) 
         {
-            UserBook userBook = new UserBook(
+            Book book = new Book(
                     result.getInt("user_id"),
                     result.getString("isbn"),
                     result.getString("title"),
@@ -47,7 +47,7 @@ public class BookDAO extends DAOFactory
                     result.getInt("price"),
                     result.getDate("date")
             );
-            userListings.add(userBook);
+            userListings.add(book);
         }
         
         return userListings;
