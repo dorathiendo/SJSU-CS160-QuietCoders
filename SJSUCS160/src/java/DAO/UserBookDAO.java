@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * 
  * @author Kevin Tan
  * @version 1.0
- * @since 11/15/2014
+ * @since 11/16/2014
  */
 public class UserBookDAO extends DAOFactory 
 {
@@ -50,6 +50,11 @@ public class UserBookDAO extends DAOFactory
         return userListings;
     }
     
+    /**
+     * Adds a new book to the listings.
+     * @param book the book being added.
+     * @throws SQLException 
+     */
     public void insertUserBook(Book book) throws SQLException
     {
         preparedStatement = connection.prepareStatement("INSERT INTO UserListings"

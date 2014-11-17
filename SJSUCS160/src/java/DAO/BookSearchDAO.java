@@ -29,8 +29,12 @@ public class BookSearchDAO extends DAOFactory
         
         // Execute statement to get results from database.
         preparedStatement = connection.prepareStatement("SELECT * FROM UserListings "
-                + "WHERE " + attribute + " = '" + term + "' "
-                + "ORDER BY " + order);
+                + "WHERE ? = '?' "
+                + "ORDER BY ?");
+        preparedStatement.setString(1, attribute);
+        preparedStatement.setString(2, term);
+        preparedStatement.setString(3, order);
+        
         ResultSet result = preparedStatement.executeQuery();
         
         // Create UserBook objects and create an array of them from the results.

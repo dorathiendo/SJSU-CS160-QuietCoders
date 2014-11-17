@@ -9,26 +9,19 @@ package Model;
  */
 public class User 
 {
-    private int id;
+    private int password;
     private String first, last, email;
     
     /**
      * Constructs a user.
      * Follows the construction of the Users table on spartasavedb.
      */
-    public User(int id, String first, String last, String email)
+    public User(String first, String last, String email, String password)
     {
-        this.id = id;
         this.first = first;
         this.last = last;
         this.email = email;
-    }
-    
-    /**
-     * Getter and setter methods below.
-     */
-    public void setId(int id) {
-        this.id = id;
+        this.password = password.hashCode();
     }
 
     public void setFirst(String first) {
@@ -42,9 +35,9 @@ public class User
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public int getId() {
-        return id;
+    
+    public void setPassword(int password) {
+        this.password = password;
     }
 
     public String getFirst() {
@@ -57,5 +50,9 @@ public class User
 
     public String getEmail() {
         return email;
+    }
+    
+    public int getPassword() {
+        return password;
     }
 }
