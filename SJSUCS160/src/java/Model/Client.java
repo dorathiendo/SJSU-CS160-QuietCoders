@@ -25,8 +25,8 @@ import org.xml.sax.SAXException;
 
 public class Client {
 
-    private static final String SECRET_KEY = "sa11/uUc5bLxGDVQI5rxQnI8wCBiWJrLDki4/WYq";
-    private static final String AWS_KEY = "AKIAJW5HXCUNXV2EJG4A";
+    private static final String SECRET_KEY = "";
+    private static final String AWS_KEY = "";
     private static final String ASSOCIATE_TAG = "spart00-20";
     private static final String ENDPOINT = "ecs.amazonaws.com";
 
