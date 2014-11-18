@@ -22,7 +22,7 @@ public class BookSearchDAO extends DAOFactory
      * @return result all the matching records from UserListings table.
      * @throws SQLException 
      */
-    public ArrayList<Book> getUserListings
+    public ArrayList<TextBook> getUserListings
         (String attribute, String term, String order) throws SQLException
     {
         if (order.isEmpty()) order = "price"; // Order by price by default.
@@ -38,10 +38,10 @@ public class BookSearchDAO extends DAOFactory
         ResultSet result = preparedStatement.executeQuery();
         
         // Create UserBook objects and create an array of them from the results.
-        ArrayList<Book> userListings = new ArrayList<Book>();
+        ArrayList<TextBook> userListings = new ArrayList<Book>();
         while (result.next()) 
         {
-            Book book = new Book(
+            TextBook book = new TextBook(
                     result.getInt("user_id"),
                     result.getString("isbn"),
                     result.getString("title"),

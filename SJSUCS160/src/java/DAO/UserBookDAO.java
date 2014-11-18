@@ -21,7 +21,7 @@ public class UserBookDAO extends DAOFactory
      * @return userListings a list of books posted by the users.
      * @throws SQLException 
      */
-    public ArrayList<Book> getUserBooks(int id) throws SQLException
+    public ArrayList<TextBook> getUserBooks(int id) throws SQLException
     {
         // Execute statement to get results from database.
         preparedStatement = connection.prepareStatement("SELECT * FROM UserListings "
@@ -29,11 +29,11 @@ public class UserBookDAO extends DAOFactory
         ResultSet result = preparedStatement.executeQuery();
         
         // Create UserBook objects and create an array of them from the results.
-        ArrayList<Book> userListings = new ArrayList<Book>();
+        ArrayList<TextBook> userListings = new ArrayList<Book>();
         
         while (result.next()) 
         {
-            Book book = new Book
+            TextBook book = new TextBook
             (
                 result.getInt("user_id"),
                 result.getString("isbn"),
@@ -55,7 +55,7 @@ public class UserBookDAO extends DAOFactory
      * @param book the book being added.
      * @throws SQLException 
      */
-    public void insertUserBook(Book book) throws SQLException
+    public void insertUserBook(TextBook book) throws SQLException
     {
         preparedStatement = connection.prepareStatement("INSERT INTO UserListings"
                 + "(user_id, isbn, title, author, book_condition, category, price, post_date)"

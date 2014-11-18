@@ -1,17 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Model;
 
 import java.sql.Date;
 
 /**
- * Model for a book posted by a user.
- * 
- * @author Kevin Tan
- * @version 1.0
- * @since 11/15/2014
+ *
+ * @author Dora
  */
-public class Book 
-{
-    private int user_id, price;
+public class OnlineBook{
+private int user_id, price;
     private String isbn, title, author, book_condition, category;
     private Date post_date;
     
@@ -19,7 +20,7 @@ public class Book
      * Constructs a book created by a user.
      * Follows the construction of the UserListings table on spartasavedb.
      */
-    public Book(int user_id, String isbn, String title, String author, 
+    public OnlineBook(int user_id, String isbn, String title, String author, 
             String book_condition, String category, int price, Date post_date)
     {
         this.user_id = user_id;
@@ -98,4 +99,5 @@ public class Book
     public Date getPost_date() {
         return post_date;
     }
+    
 }
