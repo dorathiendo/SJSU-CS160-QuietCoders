@@ -31,8 +31,12 @@
                 <div class="left">
                     <div class="first">
                         <span class="fullw">Find Your Textbooks Fast and Cheap!</span>
-                        <div style="width: 100%"><input type="text" class="input" placeholder="Enter the ISBN, Author or Title..." style="width: 450px;"></div>
-                        <a href="search.html"><input type="submit" value="Search" class="gray-button blue" style="margin-right: 65px;"></a>
+                        <form name="searchbar" method="post" action="SearchServlet.java">
+                        <div style="width: 100%">
+                            <input name="sbar" type="text" class="input" placeholder="Enter the ISBN, Author or Title..." style="width: 450px;">
+                        </div>
+                        <input type="submit" value="Search" class="gray-button blue" style="margin-right: 65px;">
+                        </form>
                     </div>
                     <div class="second">
                         <span class="fullw">Or Enter in Your Course(s):</span>

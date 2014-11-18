@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class BookSearchDAO extends DAOFactory 
 {
+    private String searchMe = "";
     /**
      * Gets all of the rows from UserListings table in spartasavedb.
      * @param attribute the column name relevant to the search term.
@@ -55,5 +56,9 @@ public class BookSearchDAO extends DAOFactory
         }
         
         return userListings;
+    }
+        
+    public void sendSearchBarText(String text){
+        searchMe = text;
     }
 }
