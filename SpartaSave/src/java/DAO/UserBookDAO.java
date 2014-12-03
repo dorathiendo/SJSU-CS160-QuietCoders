@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.*;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,6 +16,26 @@ import java.util.ArrayList;
  */
 public class UserBookDAO extends DAOFactory 
 {
+    private PreparedStatement getBooksStatement;
+    private PreparedStatement insertBooksStatement;
+    private PreparedStatement updateBooksStatement;
+    private PreparedStatement deleteBooksStatement;
+    
+    /**
+     * Constructor creates the prepared statements.
+     * @throws SQLException 
+     */
+    public UserBookDAO() throws SQLException 
+    {
+        getBooksStatement = connection.prepareStatement("SELECT * FROM UserListings "
+                + "WHERE user_id = ?");
+        deleteBooksStatement = connection.prepareStatement("DELETE FROM UserListings "
+                + "WHERE id = ?");
+        insertBooksStatement = connection.prepareStatement("INSERT INTO UserListings"
+                + "(user_id, isbn, title, author, book_condition, category, price, post_date) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+    }
+    
     /**
      * Get books posted by a specific user.
      * @param id the user_id of the user.
@@ -24,9 +45,8 @@ public class UserBookDAO extends DAOFactory
     public ArrayList<Book> getUserBooks(int id) throws SQLException
     {
         // Execute statement to get results from database.
-        preparedStatement = connection.prepareStatement("SELECT * FROM UserListings "
-                + "WHERE user_id = " + id);
-        ResultSet result = preparedStatement.executeQuery();
+        getBooksStatement.setInt(1, id);
+        ResultSet result = getBooksStatement.executeQuery();
         
         // Create UserBook objects and create an array of them from the results.
         ArrayList<Book> userListings = new ArrayList<Book>();
@@ -57,18 +77,15 @@ public class UserBookDAO extends DAOFactory
      */
     public void insertUserBook(Book book) throws SQLException
     {
-        preparedStatement = connection.prepareStatement("INSERT INTO UserListings"
-                + "(user_id, isbn, title, author, book_condition, category, price, post_date)"
-                + "VALUES('" + book.getUser_id() + "', '"
-                             + book.getIsbn() + "', '"
-                             + book.getTitle() + "', '"
-                             + book.getAuthor() + "', '"
-                             + book.getBook_condition() + "', '"
-                             + book.getCategory() + "', '"
-                             + book.getPrice() + "', '"
-                             + book.getPost_date() + "'"
-                + ")");
-        preparedStatement.executeUpdate();
+        insertBooksStatement.setInt(1,book.getUser_id());
+        insertBooksStatement.setString(2, book.getIsbn());
+        insertBooksStatement.setString(3, book.getTitle());
+        insertBooksStatement.setString(4, book.getAuthor());
+        insertBooksStatement.setString(5, book.getBook_condition());
+        insertBooksStatement.setString(6, book.getCategory());
+        insertBooksStatement.setInt(7, book.getPrice());
+        insertBooksStatement.setDate(8, book.getPost_date());
+        insertBooksStatement.executeUpdate();
     }
     
     /**
@@ -81,10 +98,10 @@ public class UserBookDAO extends DAOFactory
      */
     public void updateUserBook(int bookId, String attribute, String value) throws SQLException
     {
-        preparedStatement = connection.prepareStatement("UPDATE UserListings"
+        updateBooksStatement = connection.prepareStatement("UPDATE UserListings"
                 + " SET " + attribute + "=" + value 
                 + " WHERE id = " + bookId);
-        preparedStatement.executeUpdate();
+        updateBooksStatement.executeUpdate();
     }
     
     /**
@@ -94,8 +111,7 @@ public class UserBookDAO extends DAOFactory
      */
     public void deleteUserBook(int id) throws SQLException
     {
-        preparedStatement = connection.prepareStatement("DELETE FROM UserListings"
-                + "WHERE id = " + id);
-        preparedStatement.executeUpdate();
+        deleteBooksStatement.setInt(1, id);
+        deleteBooksStatement.executeUpdate();
     }
 }

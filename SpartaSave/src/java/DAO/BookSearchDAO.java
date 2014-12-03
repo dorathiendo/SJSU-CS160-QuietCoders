@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.*;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,6 +16,18 @@ import java.util.ArrayList;
 public class BookSearchDAO extends DAOFactory 
 {
     private String searchMe = "";
+    private PreparedStatement searchStatement;
+    
+    /**
+     * Constructor that creates the prepared statement(s).
+     * @throws SQLException 
+     */
+    public BookSearchDAO() throws SQLException 
+    {
+        searchStatement = connection.prepareStatement("SELECT * FROM UserListings "
+            + "WHERE title = ? OR author = ? OR isbn = ? ORDER BY ?");
+    }
+    
     /**
      * Gets all of the rows from UserListings table in spartasavedb.
      * @param attribute the column name relevant to the search term.
@@ -29,12 +42,10 @@ public class BookSearchDAO extends DAOFactory
         if (order.isEmpty()) order = "price"; // Order by price by default.
         
         // Execute statement to get results from database.
-        preparedStatement = connection.prepareStatement("SELECT * FROM UserListings "
-                + "WHERE ? = '?' "
-                + "ORDER BY ?");
-        preparedStatement.setString(1, attribute);
-        preparedStatement.setString(2, term);
-        preparedStatement.setString(3, order);
+        searchStatement.setString(1, term);
+        searchStatement.setString(2, term);
+        searchStatement.setString(3, term);
+        searchStatement.setString(4, order);
         
         ResultSet result = preparedStatement.executeQuery();
         

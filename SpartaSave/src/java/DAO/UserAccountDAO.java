@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.*;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,6 +15,23 @@ import java.util.ArrayList;
  */
 public class UserAccountDAO extends DAOFactory 
 {
+    private PreparedStatement addAccountStatement;
+    private PreparedStatement updateAccountStatement;
+    private PreparedStatement deleteAccountStatement;
+    
+    /**
+     * Constructor creates the prepared statements.
+     * @throws SQLException 
+     */
+    public UserAccountDAO() throws SQLException 
+    {
+        addAccountStatement = connection.prepareStatement("INSERT INTO Users"
+            + "(first, last, email, password) "
+            + "VALUES ('?', '?', '?', ?)");
+        deleteAccountStatement = connection.prepareStatement("DELETE FROM Users"
+            + "WHERE id = ?");
+    }
+    
     /**
      * Adds a new account.
      * @param user the new account to create.
@@ -21,14 +39,12 @@ public class UserAccountDAO extends DAOFactory
      */
     public void addNewAccount(User user) throws SQLException
     {
-        preparedStatement = connection.prepareStatement("INSERT INTO Users"
-                + "(first, last, email, password) "
-                + "VALUES ('?', '?', '?', ?)");
-        preparedStatement.setString(1, user.getFirst());
-        preparedStatement.setString(2, user.getLast());
-        preparedStatement.setString(3, user.getEmail());
-        preparedStatement.setInt(4, user.getPassword());
-        preparedStatement.executeUpdate();
+
+        addAccountStatement.setString(1, user.getFirst());
+        addAccountStatement.setString(2, user.getLast());
+        addAccountStatement.setString(3, user.getEmail());
+        addAccountStatement.setInt(4, user.getPassword());
+        addAccountStatement.executeUpdate();
     }
     
     /**
@@ -41,10 +57,10 @@ public class UserAccountDAO extends DAOFactory
      */
     public void updateAccount(int id, String attribute, String value) throws SQLException
     {
-        preparedStatement = connection.prepareStatement("UPDATE Users"
+        updateAccountStatement = connection.prepareStatement("UPDATE Users"
                 + " SET " + attribute + "=" + value 
                 + " WHERE id = " + id);
-        preparedStatement.executeUpdate();
+        updateAccountStatement.executeUpdate();
     }
     
     /**
@@ -54,8 +70,7 @@ public class UserAccountDAO extends DAOFactory
      */
     public void deleteAccount(int id) throws SQLException
     {
-        preparedStatement = connection.prepareStatement("DELETE FROM Users"
-                + "WHERE id = " + id);
-        preparedStatement.executeUpdate();
+        deleteAccountStatement.setInt(1, id);
+        deleteAccountStatement.executeUpdate();
     }
 }

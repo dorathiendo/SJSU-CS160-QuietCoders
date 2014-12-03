@@ -3,6 +3,7 @@ package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  * The database access object that connects to the database.
@@ -25,7 +26,7 @@ public abstract class DAOFactory
     /**
      * Constructs the model for user posted books.
      */
-    public DAOFactory()
+    public DAOFactory() throws SQLException
     {
         this.connection = connect();
     }
