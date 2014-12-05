@@ -61,5 +61,4 @@ public class SearchServlet extends HttpServlet {
         dao.sendSearchBarText(result);
     }
 
-
 }
