@@ -6,101 +6,272 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="reset.css" />
-        <link rel="stylesheet" href="style.css" />
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,500,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        
+         <link href="css/animate.css" rel="stylesheet" type="text/css">           
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">                    
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <header>
-            <div class="container">
-            <div class="left">
-            	<a href="index.jsp">
-                    </a>
-                </div>
-                <div class="right">
-                        <a href="SellTextbookPage.jsp"><input type="submit" value="Sell Your Textbook(s)" class="gray-button yellow"></a>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+<div class="top_area"><!-- start top area -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-md-5 col-lg-5">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="">
                     </div>
                 </div>
-            </div>
-        </header>
-        <section class="body">
-            <div class="container">
-                <div class="left">
-                    <div class="first">
-                        <span class="fullw">Find Your Textbooks Fast and Cheap!</span>
-                        <form name="searchbar" method="post" action="SearchServlet.java">
-                        <div style="width: 100%">
-                            <input name="sbar" type="text" class="input" placeholder="Enter the ISBN, Author or Title..." style="width: 450px;">
-                        </div>
-                        <input type="submit" value="Search" class="gray-button blue" style="margin-right: 65px;">
-                        </form>
-                    </div>
-                    <div class="second">
-                        <span class="fullw">Or Enter in Your Course(s):</span>
-                        <input type="text" class="input" placeholder="Department">
-                        <input type="text" class="input" placeholder="Course#">
-                        <input type="text" class="input" placeholder="Section#" style="margin-right: 0;">
-                        <input type="text" class="input" placeholder="Department">
-                        <input type="text" class="input" placeholder="Course#">
-                        <input type="text" class="input" placeholder="Section#" style="margin-right: 0;">
-                        <input type="submit" value="Go" class="gray-button green">
-                    </div>
-                    <div class="third">
-                        <a href="SignInPage.jsp">Already have an account? Sign-in!</a>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="content">
-                        <p class="center">SJSU Bookstore Hours</p>
-                        <div class="white">
-                            <ul class="fleft">
-                                <li>Monday</li>
-                                <li>Tuesday</li>
-                                <li>Wednesday</li>				
-                                <li>Thursday</li>				
-                                <li>Friday</li>				
-                                <li>Saturday</li>				
-                                <li>Sunday</li>				
-                            </ul>
-                            <ul class="fright">
-                                <li>7.30AM-6.00PM</li>
-                                <li>7.30AM-6.00PM</li>
-                                <li>7.30AM-6.00PM</li>
-                                <li>7.30AM-6.00PM</li>
-                                <li>7.30AM-6.00PM</li>
-                                <li>Closed</li>
-                                <li>Closed</li>
-                            </ul>
-                        </div>
-                        <p class="center">MLK Library Hours</p>
-                        <div class="white" style="margin-bottom: 0;">
-                            <ul class="fleft">
-                                <li>Student Hours</li> 
-                                <li>Monday-Thursday</li> 
-                                <li>Friday</li> 
-                                <li>Saturday</li> 
-                                <li>Sunday</li> 
-                            </ul>
-                            <ul class="fright">
-                                <li> &nbsp;</li>
-                                <li>8:00AM-1.00AM*</li>
-                                <li>8.00AM-6.00AM</li>
-                                <li>9.00AM-6.00PM</li>
-                                <li>1.00PM-1.00AM*</li>
-                            </ul>
-                        </div>
-                        &nbsp;
+                <div class="col-sm-7 col-md-7 col-lg-7">
+                    <div class="navigation">
+                        <ul class="menu">
+                            <li><a href="#">Sell Textbook</a></li>
+                            <li id="sign_in"><a href="#">Sign In</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="footer">
-            <div class="container">
-                Copy-Rights Reserved
+        </div>
+    </div>
+
+    <div class="search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-lg-2"></div>
+                <div class="col-md-8 col-lg-8">
+                        <form  role="search">
+                    <div class="input-group add-on">
+                      <input class="form-control" placeholder="Enter title, author, or ISBN..." name="srch-term" id="srch-term" type="text">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-2 col-lg-2"></div>
+            </div>             
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-lg-2"></div>
+                <div class="col-sm-4 col-md-2 col-lg-2">
+                <div class="service">
+                    <p>One stop text book finder </p>
+                    <i class="fa fa-search"></i>
+                </div>                    
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-sm-4 col-md-2 col-lg-2">
+                <div class="service">
+                    <p>One stop text book finder </p>
+                    <i class="fa fa-bicycle"></i>
+                </div>                    
+                </div>
+                <div class="col-md-1 col-lg-1"></div>
+                <div class="col-sm-4 col-md-2 col-lg-2">
+                <div class="service">
+                    <p>One stop text book finder </p>
+                    <i class="fa fa-search"></i>
+                </div>                    
+                </div>
+                <div class="col-md-2 col-lg-2"></div>
+            </div>             
+        </div>
+    </div>
+</div><!-- end top area -->
+
+<div class="content_area"><!-- start content area -->
+    <div class="container">
+        <p>We search through various sites to find you best price</p>
+    </div>
+</div><!-- end content area -->
+
+<div class="footer_area"><!-- start footer area -->
+    <div class="widgets">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="widget">
+                        <h2 class="widget_title">SJSU Bookstore Hours</h2>
+
+                        <ul class="widget_left col-xs-4">
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                        </ul>
+
+                        <ul class="widget_right col-xs-8">
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="widget">
+                        <h2 class="widget_title">SJSU Bookstore Hours</h2>
+
+                        <ul class="widget_left col-xs-4">
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                        </ul>
+
+                        <ul class="widget_right col-xs-8">
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>7.30AM-6.00PM</li>
+                            <li>Closed</li>
+                            <li>Closed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="widget">
+                        <h2 class="widget_title">SJSU Bookstore Hours</h2>
+
+                        <ul class="widget_left col-xs-4">
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                            <li>Monday</li>
+                        </ul>
+
+
+                    </div>
+                </div>
             </div>
-        </section>
-    </body>
+        </div>
+    </div>
+</div><!-- end footer area -->
+
+
+<div class="popup_area">
+<div class="popup">
+
+<div class="login_area">
+<div class="login">
+    <h2>Login to SpartaSave</h2>
+    <form action="">
+        <input type="text" placeholder="Email Address">
+        <input type="Password" placeholder="Password">
+        <button class="submin" type="submit">Login</button>
+    </form>
+</div>
+
+<div class="popup_bottom">
+    <p>Not a member yet? <a class="signup_button" href="#">Sign up!</a> </p>
+</div>
+
+</div>
+
+<div class="signup_area">
+<div class="login signup">
+    <h2>Join SpartaSave</h2>
+    <p>and start selling your textbooks!</p>
+    <form action="">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="Enter an email address">
+        <input type="passworde" placeholder="Enter an passworde">
+        <button class="submin" type="submit">Join</button>
+    </form>
+</div>
+
+<div class="popup_bottom">
+    <p>Already a member? <a href="#" class="signin_button">Sign in!</a> </p>
+</div>
+
+</div>
+
+ <a href="#" class="close_popup"><i class="fa fa-close"></i></a>   
+</div>
+</div>
+
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+       <script src="js/main.js"></script>
+        
+
+ <script>
+jQuery(document).ready(function($) {
+    $(".popup_area").hide();
+    $(".signup_area").hide();
+    $("#sign_in").click(function() {
+        $(".popup_area").show();
+    });
+
+    $(".close_popup").click(function() {
+        $(".popup_area").hide();
+    });
+
+    $(".signup_button").click(function() {
+            $(".login_area").hide();
+            $(".signup_area").show();
+    });
+    $(".signin_button").click(function() {                
+                $(".signup_area").hide();
+                $(".login_area").show();
+        });
+
+
+
+
+
+});
+ </script>
+ 
+
+
+
+</body>
 </html>
