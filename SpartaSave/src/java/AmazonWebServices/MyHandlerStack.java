@@ -1,3 +1,7 @@
+package AmazonWebServices;
+
+import Model.*;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
