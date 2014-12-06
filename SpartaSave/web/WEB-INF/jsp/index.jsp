@@ -34,13 +34,15 @@
             <div class="row">
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="logo">
+                    <a href="index.jsp">
                         <img src="img/logo.png" alt="">
+                    </a>
                     </div>
                 </div>
                 <div class="col-sm-7 col-md-7 col-lg-7">
                     <div class="navigation">
                         <ul class="menu">
-                            <li><a href="#">Sell Textbook</a></li>
+                            <li><a href="SellTextbook.jsp">Sell Textbook</a></li>
                             <li id="sign_in"><a href="#">Sign In</a></li>
                         </ul>
                     </div>
@@ -74,21 +76,21 @@
                 <div class="col-md-2 col-lg-2"></div>
                 <div class="col-sm-4 col-md-2 col-lg-2">
                 <div class="service">
-                    <p>One Stop Textbook Finder</p>
+                    <p>One stop textbook finder</p>
                     <i class="fa fa-search"></i>
                 </div>                    
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-sm-4 col-md-2 col-lg-2">
                 <div class="service">
-                    <p>Sell Textbooks Locally</p>
+                    <p>Sell textbooks locally</p>
                     <i class="fa fa-bicycle"></i>
                 </div>                    
                 </div>
                 <div class="col-md-1 col-lg-1"></div>
                 <div class="col-sm-4 col-md-2 col-lg-2">
                 <div class="service">
-                    <p>Save $$$ Instantly</p>
+                    <p>Save $$$ instantly</p>
                     <i class="fa fa-thumbs-up"></i>
                 </div>                    
                 </div>
@@ -100,7 +102,7 @@
 
 <div class="content_area"><!-- start content area -->
     <div class="container">
-        <p>We search through various sites to find you best price</p>
+        <p>We search through various sites to find you best price!</p>
     </div>
 </div><!-- end content area -->
 
@@ -129,23 +131,29 @@
                             <li>7.30AM-6.00PM</li>
                             <li>7.30AM-6.00PM</li>
                             <li>Closed</li>
-                            <li>Closed</ii>
+                            <li>Closed</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="widget">
-                        <h2 class="widget_title">MLK Student Hours</h2>
+                        <h2 class="widget_title">SJSU Bookstore Hours</h2>
 
                         <ul class="widget_left col-xs-4">
-                            <li>Monday - Thursday</li>
+                             <li>Monday</li>
+                            <li>Tuesday</li>
+                            <li>Wednesday</li>
+                            <li>Thursday</li>
                             <li>Friday</li>
                             <li>Saturday</li>
                             <li>Sunday</li>
                         </ul>
 
                         <ul class="widget_right col-xs-8">
+                            <li>8.00AM-1.00AM*</li>
+                            <li>8.00AM-1.00AM*</li>
+                            <li>8.00AM-1.00AM*</li>
                             <li>8.00AM-1.00AM*</li>
                             <li>8.00AM-6.00PM</li>
                             <li>9.00AM-6.00PM</li>
@@ -156,24 +164,20 @@
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="widget">
-                        <h2 class="widget_title">Buy Locally</h2>
+                        <h2 class="widget_title">Buy Locally @SJSU</h2>
 
                         <ul class="widget_left col-xs-4">
                             <li>ACCOUNTING</li>
                             <li>BIOLOGY</li>
-                            <li>Business</li>
-                            <li>Chemistry</li>
+                            <li>BUSINESS</li>
                             <li>CHEMISTRY</li>
-                            <li>ENGLISH</li>
                             <li>ENGINEERING</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
+                            <li>ENGLISH</li>
+                            <li>KINESIOLOGY</li>
+                            <li>MATHEMATICS</li>
+                            <li>SOCIAL SCIENCE</li>
+                            <li>OTHER</li>
                         </ul>
-
-
                     </div>
                 </div>
             </div>
@@ -190,7 +194,7 @@
     <h2>Login to SpartaSave</h2>
     <form action="">
         <input type="text" placeholder="Email Address">
-        <input type="Password" placeholder="Password">
+        <input type="passworde" placeholder="passworde">
         <button class="submin" type="submit">Login</button>
     </form>
 </div>

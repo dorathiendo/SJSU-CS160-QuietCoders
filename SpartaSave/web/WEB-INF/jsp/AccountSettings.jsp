@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="logo">
-                     <a href="index.jsp">
+                    <a href="index.jsp">
                         <img src="img/logo.png" alt="">
                     </a>
                     </div>
@@ -42,8 +42,8 @@
                 <div class="col-sm-7 col-md-7 col-lg-7">
                     <div class="navigation">
                         <ul class="menu">
-                            <li><a href="SellTextbook.jsp">Sell Textbook</a></li>
-                            <li><a href="index.jsp">Sign Out</a></li>
+                            <li><a href="#">Sell Textbook</a></li>
+                            <li id="sign_in"><a href="#">Sign In</a></li>
                         </ul>
                     </div>
                 </div>
@@ -81,67 +81,59 @@
 <div class="footer_area"><!-- start footer area -->
     <div class="widgets">
         <div class="container">
+
             <div class="user_area">
                 <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <div class="wecome_text">
-                            <h1>Welcome Back, First Name!</h1>
+                            <h1>Change Email Address or Password.</h1>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <div class="user_post_setting">
                             <ul>
-                                <li><a href="AccountPage.jsp">Posting</a></li>
+                                <li><a href="AccountsPage.jsp">Posting</a></li>
                                 <li><a href="">|</a></li>
                                 <li><a href="AccountSettings.jsp">Settings</a></li>
                             </ul>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="showing_all_posting" >
-                        <div class="panel panel-default">
-                          <!-- Default panel contents -->
-                          <div class="panel-heading">Showing all postings</div>
-
-                          <!-- Table -->
-                          <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
-                                <thead>
-                                  <tr>
-                                    <th>#</th>
-                                    <th>Status</th>
-                                    <th>Manage</th>
-                                    <th>Textbook Title</th>
-                                    <th>Category</th>
-                                    <th>Post Date</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>1</td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                  </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+
+            </div>
+
+            <dvi class="sellbook_area acount_setting" >
+    
+                
+                    <form class="col-md-6" action="" >
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Email Address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Current Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Current Password">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">New Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Re-enter New Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Re Enter New Password">
+                      </div>
+                    
+                    <div class="row">
+                    <div class="sellbook_button">                    
+                        <button type="submit" class="submit">UPDATE</button>
+                        <button type="reset" class="reset">RESET</button>
+                    </div>
+                    </div>
+                    </form>
+                
+            </dvi>
         </div>
     </div>
 </div><!-- end footer area -->
@@ -155,7 +147,7 @@
     <h2>Login to SpartaSave</h2>
     <form action="">
         <input type="text" placeholder="Email Address">
-        <input type="password" placeholder="password">
+        <input type="passworde" placeholder="passworde">
         <button class="submin" type="submit">Login</button>
     </form>
 </div>
@@ -174,7 +166,7 @@
         <input type="text" placeholder="First Name">
         <input type="text" placeholder="Last Name">
         <input type="text" placeholder="Enter an email address">
-        <input type="passworde" placeholder="Enter an passworde">
+        <input type="password" placeholder="Enter an password">
         <button class="submin" type="submit">Join</button>
     </form>
 </div>

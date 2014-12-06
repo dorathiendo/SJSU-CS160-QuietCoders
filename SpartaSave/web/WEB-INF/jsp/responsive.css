@@ -11,6 +11,8 @@ body { font-size: 25px;}
 .menu  li  a {   font-size: 25px;  }
 .widget_title {   font-size: 25px;}
 .widget ul li {  font-size: 22px;}
+
+.sellbook_area { font-size: 20px; }
 }
 
 /* Mobile small Layout */
@@ -30,6 +32,7 @@ body { font-size: 20px;}
 .widget_title {   font-size: 20px;}
 .widget ul li {  font-size: 18px;}
 	
+ .user_post_setting ul { float: none;}
 }
 
 

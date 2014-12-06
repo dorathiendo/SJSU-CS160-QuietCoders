@@ -8,6 +8,7 @@ a:focus {outline: none;}
     background: url("img/banner.png") no-repeat;
     background-size: cover;
     overflow: hidden;
+    padding-bottom: 20px;
 }
 
 .header {
@@ -205,3 +206,30 @@ position: absolute;
  .signup h2 {margin-bottom: 0; }
  .signup p { font-size: 20px; color: #898989; margin-bottom: -15;}
  .signup input { border:1px solid #00bff3; margin-top: 15px}
+
+
+ /* account page */
+ .user_post_setting {}
+ .user_post_setting ul { float: right; margin:0; padding: 0; list-style: none;}
+ .user_post_setting ul li { display: inline-block; margin:0; padding: 0; list-style: none; margin-top: 17px;}
+
+.showing_all_posting {margin-top: 20px; font-size:20px; }
+
+/*sellbook_area */
+
+.sellbook_area { font-family: 'Open Sans', sans-serif;  color: #898989; background: #fff; border:3px solid #707070; overflow: hidden; display: block; margin-top: 14px; padding: 20px; padding-top: 0; }
+.sellbook_area input {display: block; margin: 0 auto; margin-top: 25px; height: 50px; border:1px solid #3c3c3c; width: 100%; background: #ebebeb; color: #898989; padding: 0 15px;}
+
+.sellbook_area select {display: block; margin: 0 auto; margin-top: 25px; height: 50px; border:1px solid #3c3c3c; width: 100%; background: #ebebeb; color: #898989; padding: 0 15px;}
+
+.sellbook_area textarea {display: block; margin: 0 auto; margin-top: 5px; height: 250px; border:1px solid #3c3c3c; width: 100%; background: #ebebeb; color: #898989; padding: 0 15px; float: left;}
+
+.sellbook_button {text-align: center; margin-top: 25px;}
+.sellbook_button button { border:1px solid #3f3f3f; border-radius: 10px; padding: 10px 40px; }
+.sellbook_button .submit { background: #f6bf00; color: #000; margin-right: 20px; }
+.sellbook_button .reset { background: #6dcff6; color: #fff; }
+
+/* acount_setting */
+
+.acount_setting form { font-size:20px; padding:10px;}
+.acount_setting input { margin-top: 5px;}

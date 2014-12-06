@@ -1,9 +1,3 @@
-<%-- 
-    Document   : SellTextbookPage
-    Created on : Nov 17, 2014, 2:39:22 PM
-    Author     : ckloveleen
---%>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -40,13 +34,15 @@
             <div class="row">
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="logo">
+                    <a href="index.jsp">
                         <img src="img/logo.png" alt="">
+                    </a>
                     </div>
                 </div>
                 <div class="col-sm-7 col-md-7 col-lg-7">
                     <div class="navigation">
                         <ul class="menu">
-                            <li><a href="#">Sell Textbook</a></li>
+                            <li><a href="SellTextbook.jsp">Sell Textbook</a></li>
                             <li id="sign_in"><a href="#">Sign In</a></li>
                         </ul>
                     </div>
@@ -100,11 +96,17 @@
 
                         <div class="col-sm-4 col-md-4">
                             <select>
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
+                              <option>Category...</option>
+                              <option>ACCOUNTING</option>
+                              <option>BIOLOGY</option>
+                              <option>BUSINESS</option>
+                              <option>CHEMISTRY</option>
+                              <option>ENGINEERING</option>
+                              <option>ENGLISH</option>
+                              <option>KINESIOLOGY</option>
+                              <option>MATHEMATICS</option>
+                              <option>SOCIAL SCIENCE</option>
+                              <option>OTHER</option>
                             </select>
                         </div> 
                     </div>
@@ -120,11 +122,11 @@
 
                         <div class="col-sm-4 col-md-4">
                             <select>
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
+                              <option>Condition...</option>
+                              <option>Like New</option>
+                              <option>Used-Good</option>
+                              <option>Used-Okay</option>
+                              <option>Used-Bad</option>
                             </select>
                         </div> 
                     </div>
@@ -176,7 +178,7 @@
         <input type="text" placeholder="First Name">
         <input type="text" placeholder="Last Name">
         <input type="text" placeholder="Enter an email address">
-        <input type="passworde" placeholder="Enter an passworde">
+        <input type="password" placeholder="Enter an password">
         <button class="submin" type="submit">Join</button>
     </form>
 </div>

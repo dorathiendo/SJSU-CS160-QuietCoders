@@ -1,8 +1,3 @@
-<%-- 
-    Document   : SearchResultsPage
-    Created on : Nov 17, 2014, 2:36:03 PM
-    Author     : ckloveleen
---%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -39,7 +34,7 @@
             <div class="row">
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="logo">
-                     <a href="index.html">
+                     <a href="index.jsp">
                         <img src="img/logo.png" alt="">
                     </a>
                     </div>
@@ -47,8 +42,8 @@
                 <div class="col-sm-7 col-md-7 col-lg-7">
                     <div class="navigation">
                         <ul class="menu">
-                            <li><a href="#">Sell Textbook</a></li>
-                            <li><a href="index.html">Sign Out</a></li>
+                            <li><a href="SellTextbook.jsp">Sell Textbook</a></li>
+                            <li><a href="index.jsp">Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -145,7 +140,7 @@
     <h2>Login to SpartaSave</h2>
     <form action="">
         <input type="text" placeholder="Email Address">
-        <input type="passworde" placeholder="passworde">
+        <input type="password" placeholder="password">
         <button class="submin" type="submit">Login</button>
     </form>
 </div>
@@ -164,7 +159,7 @@
         <input type="text" placeholder="First Name">
         <input type="text" placeholder="Last Name">
         <input type="text" placeholder="Enter an email address">
-        <input type="passworde" placeholder="Enter an passworde">
+        <input type="password" placeholder="Enter an password">
         <button class="submin" type="submit">Join</button>
     </form>
 </div>
