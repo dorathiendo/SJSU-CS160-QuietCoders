@@ -74,22 +74,22 @@
                 <div class="col-md-2 col-lg-2"></div>
                 <div class="col-sm-4 col-md-2 col-lg-2">
                 <div class="service">
-                    <p>One stop text book finder </p>
+                    <p>One Stop Textbook Finder</p>
                     <i class="fa fa-search"></i>
                 </div>                    
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-sm-4 col-md-2 col-lg-2">
                 <div class="service">
-                    <p>One stop text book finder </p>
+                    <p>Sell Textbooks Locally</p>
                     <i class="fa fa-bicycle"></i>
                 </div>                    
                 </div>
                 <div class="col-md-1 col-lg-1"></div>
                 <div class="col-sm-4 col-md-2 col-lg-2">
                 <div class="service">
-                    <p>One stop text book finder </p>
-                    <i class="fa fa-search"></i>
+                    <p>Save $$$ Instantly</p>
+                    <i class="fa fa-thumbs-up"></i>
                 </div>                    
                 </div>
                 <div class="col-md-2 col-lg-2"></div>
@@ -114,11 +114,12 @@
 
                         <ul class="widget_left col-xs-4">
                             <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
+                            <li>Tuesday</li>
+                            <li>Wednesday</li>
+                            <li>Thursday</li>
+                            <li>Friday</li>
+                            <li>Saturday</li>
+                            <li>Sunday</li>
                         </ul>
 
                         <ul class="widget_right col-xs-8">
@@ -127,51 +128,44 @@
                             <li>7.30AM-6.00PM</li>
                             <li>7.30AM-6.00PM</li>
                             <li>7.30AM-6.00PM</li>
-                            <li>7.30AM-6.00PM</li>
+                            <li>Closed</li>
+                            <li>Closed</ii>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="widget">
-                        <h2 class="widget_title">SJSU Bookstore Hours</h2>
+                        <h2 class="widget_title">MLK Student Hours</h2>
 
                         <ul class="widget_left col-xs-4">
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
+                            <li>Monday - Thursday</li>
+                            <li>Friday</li>
+                            <li>Saturday</li>
+                            <li>Sunday</li>
                         </ul>
 
                         <ul class="widget_right col-xs-8">
-                            <li>7.30AM-6.00PM</li>
-                            <li>7.30AM-6.00PM</li>
-                            <li>7.30AM-6.00PM</li>
-                            <li>7.30AM-6.00PM</li>
-                            <li>7.30AM-6.00PM</li>
-                            <li>7.30AM-6.00PM</li>
-                            <li>Closed</li>
-                            <li>Closed</li>
+                            <li>8.00AM-1.00AM*</li>
+                            <li>8.00AM-6.00PM</li>
+                            <li>9.00AM-6.00PM</li>
+                            <li>1.00PM-1.00AM*</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="widget">
-                        <h2 class="widget_title">SJSU Bookstore Hours</h2>
+                        <h2 class="widget_title">Buy Locally</h2>
 
                         <ul class="widget_left col-xs-4">
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
-                            <li>Monday</li>
+                            <li>ACCOUNTING</li>
+                            <li>BIOLOGY</li>
+                            <li>Business</li>
+                            <li>Chemistry</li>
+                            <li>CHEMISTRY</li>
+                            <li>ENGLISH</li>
+                            <li>ENGINEERING</li>
                             <li>Monday</li>
                             <li>Monday</li>
                             <li>Monday</li>

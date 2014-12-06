@@ -72,14 +72,14 @@
 
 <div class="content_area"><!-- start content area -->
     <div class="container">
-        <p>We search thought various sites to find you best price</p>
+        <p>We search through various sites to find you best price!</p>
     </div>
 </div><!-- end content area -->
 
 <div class="footer_area"><!-- start footer area -->
     <div class="widgets">
         <div class="container">
-            <div class="user_area">
+            <div clkass="user_area">
                 <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <div class="wecome_text">

@@ -3,8 +3,6 @@
     Created on : Nov 17, 2014, 12:21:49 PM
     Author     : ckloveleen
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>

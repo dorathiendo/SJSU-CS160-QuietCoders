@@ -3,8 +3,6 @@
     Created on : Nov 17, 2014, 2:36:03 PM
     Author     : ckloveleen
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -81,7 +79,7 @@
 
 <div class="content_area"><!-- start content area -->
     <div class="container">
-        <p>We search thought various sites to find you best price</p>
+        <p>We search through various sites to find you best price!</p>
     </div>
 </div><!-- end content area -->
 
@@ -113,7 +111,7 @@
                                     <a href="#"><p style="">Title: Murch's HTML5 and CSS3 by Anne Boehm andZark Ruvalcaba (2011, Paperback)</p></a>
                                     <p><a href="">Author: Zak Ruvalcaba,</a>Zak Ruvalcaba</p>
                                     <p>Condition: ..............</p>
-                                    <p>Pricr: $50</p>
+                                    <p>Price: $50</p>
                                     </td>
 
                                   </tr>
@@ -123,7 +121,7 @@
                                     <a href="#"><p style="">Title: Murch's HTML5 and CSS3 by Anne Boehm andZark Ruvalcaba (2011, Paperback)</p></a>
                                     <p><a href="">Author: Zak Ruvalcaba,</a>Zak Ruvalcaba</p>
                                     <p>Condition: ..............</p>
-                                    <p>Pricr: $50</p>
+                                    <p>Price: $50</p>
                                     </td>
 
                                   </tr>

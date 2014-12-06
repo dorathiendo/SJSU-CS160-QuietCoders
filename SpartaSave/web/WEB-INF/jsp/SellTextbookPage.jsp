@@ -4,7 +4,6 @@
     Author     : ckloveleen
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -79,7 +78,7 @@
 
 <div class="content_area"><!-- start content area -->
     <div class="container">
-        <p>We search thought various sites to find you best price</p>
+        <p>We search through various sites to find you best price!</p>
     </div>
 </div><!-- end content area -->
 
