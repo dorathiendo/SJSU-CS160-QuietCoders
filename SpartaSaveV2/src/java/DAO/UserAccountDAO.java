@@ -18,6 +18,7 @@ public class UserAccountDAO extends DAOFactory
     private PreparedStatement addAccountStatement;
     private PreparedStatement updateAccountStatement;
     private PreparedStatement deleteAccountStatement;
+    private PreparedStatement getAccountPasswordStatement;
     
     /**
      * Constructor creates the prepared statements.
@@ -26,12 +27,15 @@ public class UserAccountDAO extends DAOFactory
     public UserAccountDAO() throws SQLException 
     {
         addAccountStatement = connection.prepareStatement("INSERT INTO Users"
-            + "(first, last, email, password) "
-            + "VALUES (?, ?, ?, ?)");
+                + "(first, last, email, password) "
+                + "VALUES (?, ?, ?, ?)");
         deleteAccountStatement = connection.prepareStatement("DELETE FROM Users"
-            + "WHERE id = ?");
+                + "WHERE id = ?");
+        getAccountPasswordStatement = connection.prepareStatement("SELECT password FROM Users "
+                + "WHERE email = ?");
+        
     }
-    
+
     /**
      * Adds a new account.
      * @param user the new account to create.
@@ -45,6 +49,33 @@ public class UserAccountDAO extends DAOFactory
         addAccountStatement.setString(4, user.getPassword());
         System.out.println(addAccountStatement);
         addAccountStatement.executeUpdate();
+    }
+    
+    /**
+     * Compares if the inputted password matches the password stored in the database.
+     * @param email the email of the user trying to login.
+     * @param password the password entered to be compared.
+     * @return true only if password matches.
+     * @throws SQLException 
+     */
+    public boolean compareAccountPassword(String email, String password) throws SQLException
+    {
+        getAccountPasswordStatement.setString(1, email);
+        ResultSet results = getAccountPasswordStatement.executeQuery();
+        
+        // If no results returned, return false.
+        if (!results.isBeforeFirst())
+        {
+            return false;
+        }
+        // Compare password with password stored in the database.
+        else
+        {
+            String realPassword = null;
+            while (results.next())
+                realPassword = results.getString("password");
+            return realPassword.equals(password);
+        }
     }
     
     /**

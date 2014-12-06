@@ -192,9 +192,9 @@
 <div class="login_area">
 <div class="login">
     <h2>Login to SpartaSave</h2>
-    <form action="">
-        <input type="text" placeholder="Email Address">
-        <input type="password" placeholder="password">
+    <form action="LoginServlet" method="get">
+        <input type="text" placeholder="Email Address" name="email">
+        <input type="password" placeholder="password" name="password">
         <button class="submin" type="submit">Login</button>
     </form>
 </div>
