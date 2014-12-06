@@ -85,7 +85,20 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <div class="wecome_text">
-                            <h1>Welcome Back, First Name!</h1>
+                            <h1>Welcome Back, 
+                                <%
+                                Cookie[] cookies = request.getCookies();
+
+                                String userEmail = null;
+                                for(Cookie cookie : cookies)
+                                {
+                                    if("useremail".equals(cookie.getName()))
+                                    {
+                                        userEmail = cookie.getValue();
+                                    }
+                                }
+                                %>
+                            <%=userEmail%>!</h1>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
