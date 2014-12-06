@@ -1,0 +1,50 @@
+/* Desktop layout */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
+}
+
+/* tablate table-layout */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+body { font-size: 25px;}
+.menu {  margin-top: 24px;}
+.menu  li  a {   font-size: 25px;  }
+.widget_title {   font-size: 25px;}
+.widget ul li {  font-size: 22px;}
+
+.sellbook_area { font-size: 20px; }
+}
+
+/* Mobile small Layout */
+
+@media only screen and (max-width: 767px) {
+	
+.header {text-align: center;}
+.navigation {  float: none;  margin-top: 17px;}
+.search {  margin-top: 23px;}
+.widgets {  text-align: center;}
+.widget_right {       padding-left: 0 !important;}
+
+body { font-size: 20px;}
+.menu {  margin-top: 20px;}
+.menu  li  a {   font-size: 20px; padding: 20px;  }
+.menu  li:last-child  a {padding-right: 20px;}
+.widget_title {   font-size: 20px;}
+.widget ul li {  font-size: 18px;}
+	
+ .user_post_setting ul { float: none;}
+}
+
+
+/* Mobile larg Layout */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+ 
+
+}
+
+
+@media only screen and (max-width: 613px) {
+.popup {  width: 100%; left: 0; margin-left: 0;}
+}

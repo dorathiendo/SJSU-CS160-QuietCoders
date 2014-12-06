@@ -1,0 +1,235 @@
+body {font-family: 'Source Code Pro' ; color: #010101; font-size: 30px; position: relative; width: 100%; height: auto;}
+img {max-width: 100%;}
+a {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:focus {outline: none;}
+
+.top_area {
+    background: url("img/banner.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.header {
+    margin-top: 42px;
+}
+
+
+.logo {
+}
+
+.logo > img {
+}
+
+
+.navigation {
+    float: right;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu  li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu  li  a {
+    color: #fffafa;
+    font-size: 30px;
+    padding: 26px 26px 26px 26px;
+    display: block;
+    position: relative;
+}
+.menu  li:last-child  a {padding-right: 0;}
+.menu  li  a:after {
+    content: ""; background: #fffafa; width: 3px; border-right: 1px solid #948c81; border-left: 1px solid #948c81; height: 30px; position: absolute;
+    top: 50%; right: -2px; margin-top: -15px;
+}
+.menu  li:last-child  a:after { width: 0; border:none;}
+
+.search {
+    margin-top: 68px;
+}
+
+.search .form-control{ 
+    height: 83px; 
+    font-size: 34px; 
+    color: #959595; 
+    font-weight: 200; 
+    
+    border:3px solid #00bff3;
+    border-right: 0;
+    outline: 0 none;
+-webkit-box-shadow: -8px -1px 43px -6px rgba(0,190,243,1);
+-moz-box-shadow: -8px -1px 43px -6px rgba(0,190,243,1);
+box-shadow: -8px -1px 43px -6px rgba(0,190,243,1);
+}
+   
+.search  .btn-default{
+    background: none repeat scroll 0 0 #fff;
+     border:3px solid #00bff3;
+    border-left: 0 none;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    height: 83px;
+    padding-left: 26px;
+    padding-right: 26px;
+-webkit-box-shadow: 10px 0px 43px -6px rgba(0,190,243,1);
+-moz-box-shadow: 10px 0px 43px -6px rgba(0,190,243,1);
+box-shadow: 10px 0px 43px -6px rgba(0,190,243,1);
+}
+.services {
+    margin-bottom: 40px;
+}
+
+.service {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.service > p {
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.20);
+border-radius: 10px;
+color: #fcfbfb;
+font-size: 25px;
+font-weight: 300;
+
+padding-top:10px ;
+padding-bottom:40px ;
+
+position: relative;
+overflow:  hidden;
+width: 100%;
+
+}
+
+.service .fa {
+bottom: -22px;
+color: #f5bf00;
+font-size: 65px;
+left: 50%;
+margin-left: -32px;
+position: absolute;
+}
+.content_area {
+    padding: 17px 0;
+    text-align: center;
+    
+}
+
+.content_area p { font-weight: 500; font-size: 30px;}
+.footer_area {
+    background: url("img/bottom_banner.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.widgets {
+    margin-top: 32px;
+    margin-bottom: 15px;
+    border-top: 15px solid #f6a300;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.77);
+}
+
+
+.widget {
+}
+
+.widget_title {
+    color: #272727;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.widget ul {
+    margin:0;
+    padding: 0;
+}
+.widget ul li { list-style: none; margin: 0; padding: 0; color: #272727; font-family: 'Open Sans', sans-serif; font-size: 26px; line-height: 30px; }
+
+.widget_left {
+    float: left;
+}
+
+.widget_left > li {
+}
+
+.widget_right {
+    float: left;
+    padding-left: 30px !important;
+
+}
+
+.widget_right > li {
+}
+
+/* popup */
+.popup_area {width: 100%; height: 100%; background: rgba(0, 0, 0, 0.70); position: absolute; top: 0; overflow: hidden; z-index: 9999999}
+.popup {
+  left: 50%;
+  margin: 0 auto 0 -306px;
+  overflow: hidden;
+  position: absolute;
+  top: 10%;
+  z-index: 999;
+  text-align: center;
+  width: 612px;
+}
+.popup input {display: block; margin: 0 auto; margin-top: 25px; height: 64px; border:3px solid #00bff3; width: 80%; background: #ebebeb; color: #898989; padding: 0 15px;}
+.popup button {display: block; margin: 0 auto; margin-top: 30px; height: 64px; border:3px solid #555555; width: 87%; background: #f6a300; color: #fff; font-weight: 700;  text-transform: uppercase; border-radius: 10px;}
+.login {background: #ffffff; padding: 10px 30px 30px 30px; }
+.login h2 {
+
+  color: #000;
+ font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+
+}
+ .popup_bottom {background: #d7d7d7; color: #111111; outline:1px solid #393939; padding: 10px 0;}
+ .popup_bottom a { color: #00aeef; }
+ .popup_bottom a:hover { color: #1196c9; }
+ .close_popup {position: absolute;right: 2%; top: 1%; color: #00aeef;}
+ .close_popup:hover { color: #1196c9;}
+
+ .signup h2 {margin-bottom: 0; }
+ .signup p { font-size: 20px; color: #898989; margin-bottom: -15;}
+ .signup input { border:1px solid #00bff3; margin-top: 15px}
+
+
+ /* account page */
+ .user_post_setting {}
+ .user_post_setting ul { float: right; margin:0; padding: 0; list-style: none;}
+ .user_post_setting ul li { display: inline-block; margin:0; padding: 0; list-style: none; margin-top: 17px;}
+
+.showing_all_posting {margin-top: 20px; font-size:20px; }
+
+/*sellbook_area */
+
+.sellbook_area { font-family: 'Open Sans', sans-serif;  color: #898989; background: #fff; border:3px solid #707070; overflow: hidden; display: block; margin-top: 14px; padding: 20px; padding-top: 0; }
+.sellbook_area input {display: block; margin: 0 auto; margin-top: 25px; height: 50px; border:1px solid #3c3c3c; width: 100%; background: #ebebeb; color: #898989; padding: 0 15px;}
+
+.sellbook_area select {display: block; margin: 0 auto; margin-top: 25px; height: 50px; border:1px solid #3c3c3c; width: 100%; background: #ebebeb; color: #898989; padding: 0 15px;}
+
+.sellbook_area textarea {display: block; margin: 0 auto; margin-top: 5px; height: 250px; border:1px solid #3c3c3c; width: 100%; background: #ebebeb; color: #898989; padding: 0 15px; float: left;}
+
+.sellbook_button {text-align: center; margin-top: 25px;}
+.sellbook_button button { border:1px solid #3f3f3f; border-radius: 10px; padding: 10px 40px; }
+.sellbook_button .submit { background: #f6bf00; color: #000; margin-right: 20px; }
+.sellbook_button .reset { background: #6dcff6; color: #fff; }
+
+/* acount_setting */
+
+.acount_setting form { font-size:20px; padding:10px;}
+.acount_setting input { margin-top: 5px;}
