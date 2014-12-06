@@ -1,6 +1,8 @@
 package Model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Model for a book posted by a user.
@@ -12,7 +14,8 @@ import java.sql.Date;
 public class Book 
 {
     private int user_id, price;
-    private String isbn, title, author, book_condition, category;
+    private String isbn, title, author, book_condition, category, detailPageURL, imageURL, listPrice, lowestNewPrice, lowestPrice;
+    private List<String> authors;
     private Date post_date;
     
     /**
@@ -31,7 +34,51 @@ public class Book
         this.price = price;
         this.post_date = post_date;
     }
-
+    
+    public Book() {
+        authors = new ArrayList<String>();
+    }
+    
+    public void setDetailPageURL(String url) {
+        this.detailPageURL = url;
+    }
+    
+    public String getDetailPageURL() {
+        return this.detailPageURL;
+    }
+    
+    public void setImageURL(String url) {
+        this.imageURL = url;
+    }
+    
+    public String getImageURL() {
+        return this.imageURL;
+    }
+    
+    public void setListPrice(String price) {
+        this.listPrice = price;
+    }
+    
+    public String getListPrice() {
+        return this.listPrice;
+    }
+    
+    public void setLowestNewPrice(String price) {
+        this.lowestNewPrice = price;
+    }
+    
+    public String getLowestNewPrice() {
+        return this.lowestNewPrice;
+    }
+    
+    public void setLowestPrice(String price) {
+        this.lowestPrice = price;
+    }
+    
+    public String getLowestPrice() {
+        return this.lowestPrice;
+    }
+    
     /**
      * Getter and setter methods below.
      */
