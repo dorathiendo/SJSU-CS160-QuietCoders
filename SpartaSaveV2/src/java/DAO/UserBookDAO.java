@@ -62,7 +62,7 @@ public class UserBookDAO extends DAOFactory
                 result.getString("book_condition"),
                 result.getString("category"),
                 result.getInt("price"),
-                result.getDate("date")
+                result.getString("date")
             );
             userListings.add(book);
         }
@@ -84,7 +84,7 @@ public class UserBookDAO extends DAOFactory
         insertBooksStatement.setString(5, book.getBook_condition());
         insertBooksStatement.setString(6, book.getCategory());
         insertBooksStatement.setInt(7, book.getPrice());
-        insertBooksStatement.setDate(8, book.getPost_date());
+        insertBooksStatement.setString(8, book.getPost_date());
         insertBooksStatement.executeUpdate();
     }
     

@@ -16,14 +16,14 @@ public class Book
     private int user_id, price;
     private String isbn, title, author, book_condition, category, detailPageURL, imageURL, listPrice, lowestNewPrice, lowestPrice;
     private List<String> authors;
-    private Date post_date;
+    private String post_date;
     
     /**
      * Constructs a book created by a user.
      * Follows the construction of the UserListings table on spartasavedb.
      */
     public Book(int user_id, String isbn, String title, String author, 
-            String book_condition, String category, int price, Date post_date)
+            String book_condition, String category, int price, String post_date)
     {
         this.user_id = user_id;
         this.isbn = isbn;
@@ -110,7 +110,7 @@ public class Book
         this.category = category;
     }
 
-    public void setPost_date(Date post_date) {
+    public void setPost_date(String post_date) {
         this.post_date = post_date;
     }
 
@@ -142,7 +142,7 @@ public class Book
         return category;
     }
 
-    public Date getPost_date() {
+    public String getPost_date() {
         return post_date;
     }
 

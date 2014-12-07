@@ -84,18 +84,18 @@
             <dvi class="sellbook_area">
                 <h2>Please fill in the description of your textbook:</h2>
                 
-                    <form class="form-horizontal" action="">
+                    <form class="form-horizontal" action="AddBookServlet">
                     <div class="row">
                         <div class="col-sm-5 col-md-5">
-                            <input type="text" placeholder="Textbook Title">
+                            <input type="text" placeholder="Textbook Title" name="title">
                         </div> 
 
                         <div class="col-sm-3 col-md-3">
-                            <p style="display:inline; color:#000;">$</p><input type="text" style="width:87%;  display: inline" placeholder="Price">
+                            <p style="display:inline; color:#000;">$</p><input type="text" style="width:87%;  display: inline" placeholder="Price" name="price">
                         </div> 
 
                         <div class="col-sm-4 col-md-4">
-                            <select>
+                            <select name="category">
                               <option>Category...</option>
                               <option>ACCOUNTING</option>
                               <option>BIOLOGY</option>
@@ -113,15 +113,15 @@
 
                     <div class="row">
                         <div class="col-sm-5 col-md-5">
-                            <input type="text" placeholder="Author(s) Name">
+                            <input type="text" placeholder="Author(s) Name" name="author">
                         </div> 
 
                         <div class="col-sm-3 col-md-3">
-                            <input type="text" placeholder="Edition">
+                            <input type="text" placeholder="ISBN" name="isbn">
                         </div> 
 
                         <div class="col-sm-4 col-md-4">
-                            <select>
+                            <select name="condition">
                               <option>Condition...</option>
                               <option>Like New</option>
                               <option>Used-Good</option>
@@ -134,7 +134,7 @@
                     <div class="row" style="margin-top:10px;">
                     <div class="col-sm-12 col-md-6">
                     <h2 style="color:#000;">Additional Information:</h2>
-                    <textarea name=""></textarea>
+                    <textarea></textarea>
                     </div>
                     </div>
                     <div class="row">
@@ -159,7 +159,7 @@
     <h2>Login to SpartaSave</h2>
     <form action="">
         <input type="text" placeholder="Email Address">
-        <input type="passworde" placeholder="passworde">
+        <input type="password" placeholder="password">
         <button class="submin" type="submit">Login</button>
     </form>
 </div>

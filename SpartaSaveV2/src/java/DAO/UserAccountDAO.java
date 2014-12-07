@@ -19,6 +19,7 @@ public class UserAccountDAO extends DAOFactory
     private PreparedStatement updateAccountStatement;
     private PreparedStatement deleteAccountStatement;
     private PreparedStatement getAccountPasswordStatement;
+    private PreparedStatement getUserIDStatement;
     
     /**
      * Constructor creates the prepared statements.
@@ -33,6 +34,7 @@ public class UserAccountDAO extends DAOFactory
                 + "WHERE id = ?");
         getAccountPasswordStatement = connection.prepareStatement("SELECT password FROM Users "
                 + "WHERE email = ?");
+        getUserIDStatement = connection.prepareStatement("SELECT id FROM Users WHERE email = ?");
         
     }
 
@@ -76,6 +78,21 @@ public class UserAccountDAO extends DAOFactory
                 realPassword = results.getString("password");
             return realPassword.equals(password);
         }
+    }
+    
+    /**
+     * Gets the user id using the unique email.
+     * @param email the email of the user to find.
+     * @return the id.
+     * @throws SQLException 
+     */
+    public int getUserID(String email) throws SQLException
+    {
+        getUserIDStatement.setString(1, email);
+        ResultSet results = getUserIDStatement.executeQuery();
+        int id = 0;
+        while (results.next()) id = results.getInt("id");
+        return id;
     }
     
     /**

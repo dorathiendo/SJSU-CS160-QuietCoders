@@ -50,7 +50,7 @@ public class BookSearchDAO extends DAOFactory
                     result.getString("book_condition"),
                     result.getString("category"),
                     result.getInt("price"),
-                    result.getDate("date")
+                    result.getString("date")
             );
             userListings.add(book);
         }
