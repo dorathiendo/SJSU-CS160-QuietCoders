@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Book"%>
+<%@page import="DAO.UserAccountDAO"%>
+<%@page import="DAO.UserBookDAO"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -147,22 +151,31 @@
                                   </tr>
                                 </thead>
                                 <tbody>
+                                <%
+                                    UserBookDAO userDAO = new UserBookDAO();
+                                    UserAccountDAO accDAO = new UserAccountDAO();
+
+                                    ArrayList<Book> listings;
+                                    int count = 1;
+                                    listings = userDAO.getUserBooks(accDAO.getUserID(email));
+                                    for (Book b : listings)
+                                    {
+                                        String title = b.getTitle();
+                                        String category = b.getCategory();
+                                        String date = b.getPost_date();
+                                %>
                                   <tr>
-                                    <td>1</td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
+                                    <td><%=count%></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><%=title%></td>
+                                    <td><%=category%></td>
+                                    <td><%=date%></td>
                                   </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                  </tr>
+                                <%
+                                    count++;
+                                    }
+                                %>
                                 </tbody>
                               </table>
                               </div>
