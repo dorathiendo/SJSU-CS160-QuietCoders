@@ -8,12 +8,10 @@ package Controller;
 import DAO.*;
 import Model.Book;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -23,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Servlet for adding a new book listing from the SellTextbook.jsp page.
  *
  * @author Tan
  */

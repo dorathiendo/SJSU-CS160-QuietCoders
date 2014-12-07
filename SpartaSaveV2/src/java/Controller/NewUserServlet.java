@@ -13,6 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Creates a new user and logs them in when a user fills out the "Sign Up"
+ * window.
+ * 
+ * @author Kevin Tan
+ */
 public class NewUserServlet extends HttpServlet 
 {
     @Override

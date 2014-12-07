@@ -6,7 +6,6 @@
 package Controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author Tan
+ * Servlet for logging out a user by removing the cookie storing their email.
+ * Invoked when a user clicks on the "Sign Out" button on the top right of
+ * a page.
  */
 public class LogoutServlet extends HttpServlet {
 

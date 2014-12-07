@@ -1,7 +1,6 @@
 package Controller;
 
 import DAO.*;
-import Model.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -12,6 +11,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet to log in a user by creating a new cookie and saving their email.
+ * Invoked when a user fills out the login window.
+ */
 
 public class LoginServlet extends HttpServlet 
 {
