@@ -27,7 +27,22 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-
+        
+<%
+    // Redirect to index page if no user is signed in.
+    Cookie[] allCookies = request.getCookies();
+    String email = "0";
+    for(Cookie cookie : allCookies)
+    {
+        if("useremail".equals(cookie.getName()))
+        {
+            email = cookie.getValue();
+        }
+    }
+    
+    if(email.equals("0"))
+        response.sendRedirect("index.jsp");
+%>
 <div class="top_area"><!-- start top area -->
     <div class="header">
         <div class="container">
@@ -43,7 +58,7 @@
                     <div class="navigation">
                         <ul class="menu">
                             <li><a href="SellTextbook.jsp">Sell Textbook</a></li>
-                            <li><a href="index.jsp">Sign Out</a></li>
+                            <li><a href="LogoutServlet">Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
