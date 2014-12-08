@@ -28,6 +28,21 @@
 
         <!-- Add your site or application content here -->
 
+<%
+    // Redirect to account page page if user was signed in before.
+    Cookie[] allCookies = request.getCookies();
+    String email = "0";
+    for(Cookie cookie : allCookies)
+    {
+        if("useremail".equals(cookie.getName()))
+        {
+            email = cookie.getValue();
+        }
+    }
+    
+    if(!email.equals("0"))
+        response.sendRedirect("AccountPage.jsp");
+%>
 <div class="top_area"><!-- start top area -->
     <div class="header">
         <div class="container">
