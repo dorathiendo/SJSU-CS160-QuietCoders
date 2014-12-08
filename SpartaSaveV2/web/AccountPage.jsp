@@ -146,9 +146,10 @@
                                   <tr>
                                     <th>#</th>
                                     <th>Manage</th>
-                                    <th>Status</th>
                                     <th>Textbook Title</th>
                                     <th>Category</th>
+                                    <th>Condition</th>
+                                    <th>Price</th>
                                     <th>Post Date</th>
                                   </tr>
                                 </thead>
@@ -165,6 +166,8 @@
                                         String title = b.getTitle();
                                         String category = b.getCategory();
                                         String date = b.getPost_date();
+                                        String condition = b.getBook_condition();
+                                        int price = b.getPrice();
                                         int id = b.getId();
                                 %>
                                   <tr>
@@ -175,9 +178,10 @@
                                              <button type="submit">Delete</button>
                                         </form>
                                     </td>
-                                    <td></td>
                                     <td><%=title%></td>
                                     <td><%=category%></td>
+                                    <td><%=condition%></td>
+                                    <td>$<%=price%></td>
                                     <td><%=date%></td>
                                   </tr>
                                 <%
