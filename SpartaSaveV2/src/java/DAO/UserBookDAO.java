@@ -64,6 +64,7 @@ public class UserBookDAO extends DAOFactory
                 result.getInt("price"),
                 result.getString("post_date")
             );
+            book.setId(result.getInt("id"));
             userListings.add(book);
         }
         

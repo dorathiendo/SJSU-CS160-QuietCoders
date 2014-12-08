@@ -157,9 +157,9 @@
 <div class="login_area">
 <div class="login">
     <h2>Login to SpartaSave</h2>
-    <form action="">
-        <input type="text" placeholder="Email Address">
-        <input type="password" placeholder="password">
+    <form action="LoginServlet" method="get">
+        <input type="text" placeholder="Email Address" name="email">
+        <input type="password" placeholder="password" name="password">
         <button class="submin" type="submit">Login</button>
     </form>
 </div>
@@ -174,11 +174,11 @@
 <div class="login signup">
     <h2>Join SpartaSave</h2>
     <p>and start selling your textbooks!</p>
-    <form action="">
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="Enter an email address">
-        <input type="password" placeholder="Enter an password">
+    <form name="NewUserForm" action="NewUserServlet" method="post">
+        <input type="text" placeholder="First Name" name="first">
+        <input type="text" placeholder="Last Name" name="last">
+        <input type="text" placeholder="Enter an email address" name="email">
+        <input type="password" placeholder="Enter a password" name="password">
         <button class="submin" type="submit">Join</button>
     </form>
 </div>

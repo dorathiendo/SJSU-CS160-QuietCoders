@@ -16,6 +16,10 @@
         <servlet-name>AddBookServlet</servlet-name>
         <servlet-class>Controller.AddBookServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <servlet-class>Controller.DeleteBookServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUserServlet</servlet-name>
         <url-pattern>/NewUserServlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>AddBookServlet</servlet-name>
         <url-pattern>/AddBookServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <url-pattern>/DeleteBookServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

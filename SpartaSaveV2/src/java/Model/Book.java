@@ -17,7 +17,8 @@ public class Book
     private String isbn, title, author, book_condition, category, detailPageURL, imageURL, listPrice, lowestNewPrice, lowestPrice;
     private List<String> authors;
     private String post_date;
-    
+    private int id;
+
     /**
      * Constructs a book created by a user.
      * Follows the construction of the UserListings table on spartasavedb.
@@ -146,6 +147,14 @@ public class Book
         return post_date;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public List<String> getAuthors() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
