@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -100,14 +102,14 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td><img src="img/book.png" alt=""></td>
-                                    <td>
-                                    <a href="#"><p style="">Title: Murch's HTML5 and CSS3 by Anne Boehm andZark Ruvalcaba (2011, Paperback)</p></a>
-                                    <p><a href="">Author: Zak Ruvalcaba,</a>Zak Ruvalcaba</p>
-                                    <p>Condition: ..............</p>
-                                    <p>Price: $50</p>
-                                    </td>
+                                    <c:forEach items="${titleSearch}" var="book">
+                                        <tr><td></td><td>
+                                        <c:out value="${book.title}"/><br />
+                                        <c:out value="${book.author}"/><br />
+                                        <c:out value="${book.isbn}"/><br />
+                                        <c:out value="${book.price}"/><br />
+                                        </td></tr>
+                                    </c:forEach>
 
                                   </tr>
                                   <tr>

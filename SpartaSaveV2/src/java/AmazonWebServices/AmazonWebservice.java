@@ -1,3 +1,8 @@
+package AmazonWebServices;
+
+import AmazonWebServices.MyHandlerStack;
+import AmazonWebServices.SignedRequestsHelper;
+import Model.Book;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -28,8 +33,8 @@ import org.xml.sax.SAXException;
 
 public class AmazonWebservice {
 
-	private static final String SECRET_KEY = "tie7dG4l8bqrZl0rRP6sNCVFVYJzjVrRXgYgh+Ex";
-    private static final String AWS_KEY = "AKIAJEJAHW2KUGJXQG2A";
+    private static final String SECRET_KEY = "";
+    private static final String AWS_KEY = "";
     private static final String ASSOCIATE_TAG = "spart00-20";
     private static final String ENDPOINT = "ecs.amazonaws.com";
     
@@ -72,7 +77,7 @@ public class AmazonWebservice {
             totalPages = handler.getTotalPages();
             numberResults = handler.getTotalResults();
         } catch (Exception ex) {
-            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     	return searchResults;

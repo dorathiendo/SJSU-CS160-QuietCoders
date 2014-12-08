@@ -22,7 +22,6 @@ public abstract class DAOFactory
 
     public Connection connection;
     public PreparedStatement preparedStatement;
-    public static PreparedStatement searchStatement;
     
     /**
      * Constructs the model for user posted books.
@@ -30,7 +29,6 @@ public abstract class DAOFactory
     public DAOFactory() throws SQLException
     {
         this.connection = connect();
-        searchStatement = connection.prepareStatement("SELECT * FROM UserListings WHERE ? = '?' ORDER BY ?");
     }
     
     /**

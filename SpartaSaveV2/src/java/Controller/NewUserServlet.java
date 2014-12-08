@@ -3,7 +3,6 @@ package Controller;
 import DAO.*;
 import Model.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,13 +30,6 @@ public class NewUserServlet extends HttpServlet
         String last = request.getParameter("last");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
-        PrintWriter writer = response.getWriter();
-        String htmlRespone = "<html>";
-        htmlRespone += "<h2>Your name is: " + first + " " + last + "</h2>";
-        htmlRespone += "</html>";
-
-        writer.println(htmlRespone);
         
         // Create new user bean with the form input.
         User user = new User(first, last, email, password);

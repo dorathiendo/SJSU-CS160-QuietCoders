@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.*;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,8 +15,16 @@ import java.util.ArrayList;
  */
 public class BookSearchDAO extends DAOFactory 
 {
+    private PreparedStatement titleSearchStatement;
+    private PreparedStatement authorSearchStatement;
+    private PreparedStatement isbnSearchStatement;
 
-    public BookSearchDAO() throws SQLException {}
+    public BookSearchDAO() throws SQLException 
+    {
+        titleSearchStatement = connection.prepareStatement("SELECT * FROM UserListings WHERE title = ? ORDER BY ?");
+        authorSearchStatement = connection.prepareStatement("SELECT * FROM UserListings WHERE author = ? ORDER BY ?");
+        isbnSearchStatement = connection.prepareStatement("SELECT * FROM UserListings WHERE isbn = ? ORDER BY ?");
+    }
     
     /**
      * Gets all of the rows from UserListings table in spartasavedb.
@@ -25,18 +34,34 @@ public class BookSearchDAO extends DAOFactory
      * @return result all the matching records from UserListings table.
      * @throws SQLException 
      */
-    public static ArrayList<Book> getUserListings
+    public ArrayList<Book> getUserListings
         (String attribute, String term, String order) throws SQLException
     {
         if (order.isEmpty()) order = "price"; // Order by price by default.
         
         // Execute statement to get results from database.
-
-        searchStatement.setString(1, attribute);
-        searchStatement.setString(2, term);
-        searchStatement.setString(3, order);
-        
-        ResultSet result = searchStatement.executeQuery();
+        ResultSet result;
+        switch (attribute) 
+        {
+            case "title":
+                titleSearchStatement.setString(1, term);
+                titleSearchStatement.setString(2, order);
+                System.out.println(titleSearchStatement);
+                result = titleSearchStatement.executeQuery();
+                break;
+            case "author":
+                authorSearchStatement.setString(1, term);
+                authorSearchStatement.setString(2, order);
+                System.out.println(authorSearchStatement);
+                result = authorSearchStatement.executeQuery();
+                break;
+            default:
+                isbnSearchStatement.setString(1, term);
+                isbnSearchStatement.setString(2, order);
+                System.out.println(isbnSearchStatement);
+                result = isbnSearchStatement.executeQuery();
+                break;
+        }
         
         // Create UserBook objects and create an array of them from the results.
         ArrayList<Book> userListings = new ArrayList<Book>();
@@ -50,7 +75,7 @@ public class BookSearchDAO extends DAOFactory
                     result.getString("book_condition"),
                     result.getString("category"),
                     result.getInt("price"),
-                    result.getString("date")
+                    result.getString("post_date")
             );
             userListings.add(book);
         }
