@@ -5,10 +5,14 @@
  */
 package Controller;
 
+import AmazonWebServices.AmazonWebservice;
 import DAO.BookSearchDAO;
 import Model.Book;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -40,7 +44,6 @@ public class SearchServlet extends HttpServlet
         
         try 
         {
-            
             BookSearchDAO dao = new BookSearchDAO(); // Create connection to database.
             // Find the listings where the search matches the title.
             ArrayList<Book> titleSearch = dao.getUserListings("title", search, "price");
@@ -50,10 +53,16 @@ public class SearchServlet extends HttpServlet
             
             // Find the listings where the search matches the isbn.
             ArrayList<Book> isbnSearch = dao.getUserListings("isbn", search, "price");
+            System.out.println("HELLO");
+            // Search through amazon web service.
+            AmazonWebservice amazon = new AmazonWebservice();
+            ArrayList<Book> amazonSearch = amazon.search(search);
+            System.out.println(amazonSearch);
             
             // Combine the arraylists together.
             titleSearch.addAll(authorSearch);
             titleSearch.addAll(isbnSearch);
+            titleSearch.addAll(amazonSearch);
             
             request.setAttribute("titleSearch", titleSearch);
             //response.sendRedirect("SearchResultsPage.jsp");
@@ -61,6 +70,22 @@ public class SearchServlet extends HttpServlet
             
         } 
         catch (SQLException ex) 
+        {
+            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (InvalidKeyException ex) 
+        {
+            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        catch (IllegalArgumentException ex) 
+        {
+            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        catch (UnsupportedEncodingException ex) 
+        {
+            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        catch (NoSuchAlgorithmException ex) 
         {
             Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -155,15 +155,8 @@ public class Book
         this.id = id;
     }
     
-    public List<String> getAuthors() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setISBN(String bn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getISBN() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<String> getAuthors() 
+    {
+        return authors;
     }
 }

@@ -117,7 +117,7 @@ public class MyHandlerStack extends DefaultHandler {
     			if (parentTag.equals("ItemAttributes")) {
 	    			String isbn = content.toString().trim();
 	    			System.out.println("ISBN: " + isbn);
-	    			currentBook.setISBN(isbn);
+	    			currentBook.setIsbn(isbn);
     			}
     			break;
     		
@@ -197,7 +197,7 @@ public class MyHandlerStack extends DefaultHandler {
     	for (int i = 0; i < bk.getAuthors().size(); i++) {
     		System.out.println("Author: " + bk.getAuthors().get(i));
     	}
-    	System.out.println("ISBN: " + bk.getISBN());
+    	System.out.println("ISBN: " + bk.getIsbn());
     	System.out.println("ListPrice: " + bk.getListPrice());
     	System.out.println("Title: " + bk.getTitle());
     	System.out.println("LowestNewPrice: " + bk.getLowestNewPrice());

@@ -58,14 +58,16 @@
             <div class="row">
                 <div class="col-md-2 col-lg-2"></div>
                 <div class="col-md-8 col-lg-8">
-                        <form  role="search">
-                    <div class="input-group add-on">
-                      <input class="form-control" placeholder="Enter title, author, or ISBN..." name="srch-term" id="srch-term" type="text">
-                      <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                      </div>
-                    </div>
-                  </form>
+                    <form action="SearchServlet" method="get" role="search">
+                        <div class="input-group add-on">
+                          <input class="form-control" placeholder="Enter title, author, or ISBN..." name="search" id="srch-term" type="text">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-md-2 col-lg-2"></div>
             </div>             
@@ -103,23 +105,32 @@
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${titleSearch}" var="book">
-                                        <tr><td></td><td>
-                                        <c:out value="${book.title}"/><br />
-                                        <c:out value="${book.author}"/><br />
-                                        <c:out value="${book.isbn}"/><br />
-                                        <c:out value="${book.price}"/><br />
-                                        </td></tr>
+                                        <c:if test = "${book.authors == null}">
+                                        <tr>
+                                            <td><img src="<c:out value="${book.imageURL}"/>"></td>
+                                            <td>
+                                                Title: <c:out value="${book.title}"/><br />
+                                                Author: <c:out value="${book.author}"/><br />
+                                                ISBN: <c:out value="${book.isbn}"/><br />
+                                                Price: $<c:out value="${book.price}"/><br />
+                                                Condition: <c:out value="${book.book_condition}"/><br />
+                                                Post Date: <c:out value="${book.post_date}"/><br />
+                                            </td>
+                                        </c:if>
+                                        <c:if test = "${book.authors != null}">
+                                        <tr>
+                                            <td><img src="<c:out value="${book.imageURL}"/>"></td>
+                                            <td>
+                                                Title: <a href="<c:out value="${book.detailPageURL}"/>"> <c:out value="${book.title}"/></a><br />
+                                                Author: <c:out value="${book.authors}"/><br />
+                                                ISBN: <c:out value="${book.isbn}"/><br />
+                                                List Price: <c:out value="${book.listPrice}"/><br />
+                                                Lowest New Price: <c:out value="${book.lowestNewPrice}"/><br />
+                                                Lowest Price: <c:out value="${book.lowestPrice}"/><br />
+                                            </td>
+                                        </c:if>
+                                        </tr>
                                     </c:forEach>
-
-                                  </tr>
-                                  <tr>
-                                    <td><img src="img/book.png" alt=""></td>
-                                    <td>
-                                    <a href="#"><p style="">Title: Murch's HTML5 and CSS3 by Anne Boehm andZark Ruvalcaba (2011, Paperback)</p></a>
-                                    <p><a href="">Author: Zak Ruvalcaba,</a>Zak Ruvalcaba</p>
-                                    <p>Condition: ..............</p>
-                                    <p>Price: $50</p>
-                                    </td>
 
                                   </tr>
                                 </tbody>

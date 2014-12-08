@@ -9,6 +9,7 @@ import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +44,7 @@ public class AmazonWebservice {
     private String currentPage; // display search result page number: 1 to 10 max pages
     private int totalPages = 0;
     private int numberResults = 0;
-    public List<Book> searchResults;
+    public ArrayList<Book> searchResults;
     
     
     public AmazonWebservice() {
@@ -51,14 +52,14 @@ public class AmazonWebservice {
     }
     
     
-    public List<Book> search(String query) throws InvalidKeyException, IllegalArgumentException, UnsupportedEncodingException, NoSuchAlgorithmException {
+    public ArrayList<Book> search(String query) throws InvalidKeyException, IllegalArgumentException, UnsupportedEncodingException, NoSuchAlgorithmException {
     	SignedRequestsHelper helper = SignedRequestsHelper.getInstance(ENDPOINT, AWS_KEY, SECRET_KEY);
     	Map<String, String> params = new HashMap<String, String>();
         params.put("Service", "AWSECommerceService");
         params.put("Version", "2009-03-31");
         params.put("Operation", "ItemSearch");
         params.put("Keywords", query);
-        params.put("Author", "Murach");
+        //params.put("Author", "Murach");
         //params.put("Sort", "pricerank");
         //params.put("ItemPage", pageNumber);
         params.put("SearchIndex", "Books");
@@ -77,7 +78,7 @@ public class AmazonWebservice {
             totalPages = handler.getTotalPages();
             numberResults = handler.getTotalResults();
         } catch (Exception ex) {
-            //Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AmazonWebservice.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     	return searchResults;
